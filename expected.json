@@ -1,0 +1,26 @@
+{
+  "services": [
+    {
+      "service": "Public profile",
+      "exposure_index": 13,
+      "actions": [
+        "Review publicly shared data",
+        "Enable MFA if supported",
+        "Review long retention period"
+      ],
+      "categories": [
+        "contact",
+        "location"
+      ]
+    },
+    {
+      "service": "Research notes",
+      "exposure_index": 1,
+      "actions": [],
+      "categories": [
+        "preferences"
+      ]
+    }
+  ],
+  "basis": "user-supplied inventory; illustrative weights"
+}

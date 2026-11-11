@@ -1,0 +1,120 @@
+[
+  {
+    "input": {
+      "services": []
+    },
+    "expected": {
+      "services": [],
+      "basis": "user-supplied inventory; illustrative weights"
+    }
+  },
+  {
+    "input": {
+      "services": [
+        {
+          "name": "demo",
+          "categories": [
+            "contact"
+          ],
+          "mfa": true
+        }
+      ]
+    },
+    "expected": {
+      "services": [
+        {
+          "service": "demo",
+          "exposure_index": 1,
+          "actions": [],
+          "categories": [
+            "contact"
+          ]
+        }
+      ],
+      "basis": "user-supplied inventory; illustrative weights"
+    }
+  },
+  {
+    "input": {
+      "services": [
+        {
+          "name": "demo",
+          "categories": [
+            "location"
+          ],
+          "public": true,
+          "mfa": false,
+          "retention_days": 400
+        }
+      ]
+    },
+    "expected": {
+      "services": [
+        {
+          "service": "demo",
+          "exposure_index": 11,
+          "actions": [
+            "Review publicly shared data",
+            "Enable MFA if supported",
+            "Review long retention period"
+          ],
+          "categories": [
+            "location"
+          ]
+        }
+      ],
+      "basis": "user-supplied inventory; illustrative weights"
+    }
+  },
+  {
+    "input": {
+      "services": [
+        {
+          "name": "Public profile",
+          "categories": [
+            "contact",
+            "location"
+          ],
+          "public": true,
+          "mfa": false,
+          "retention_days": 730
+        },
+        {
+          "name": "Research notes",
+          "categories": [
+            "preferences"
+          ],
+          "public": false,
+          "mfa": true,
+          "retention_days": 90
+        }
+      ]
+    },
+    "expected": {
+      "services": [
+        {
+          "service": "Public profile",
+          "exposure_index": 13,
+          "actions": [
+            "Review publicly shared data",
+            "Enable MFA if supported",
+            "Review long retention period"
+          ],
+          "categories": [
+            "contact",
+            "location"
+          ]
+        },
+        {
+          "service": "Research notes",
+          "exposure_index": 1,
+          "actions": [],
+          "categories": [
+            "preferences"
+          ]
+        }
+      ],
+      "basis": "user-supplied inventory; illustrative weights"
+    }
+  }
+]

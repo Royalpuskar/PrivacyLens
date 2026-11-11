@@ -1,0 +1,23 @@
+{
+  "services": [
+    {
+      "name": "Public profile",
+      "categories": [
+        "contact",
+        "location"
+      ],
+      "public": true,
+      "mfa": false,
+      "retention_days": 730
+    },
+    {
+      "name": "Research notes",
+      "categories": [
+        "preferences"
+      ],
+      "public": false,
+      "mfa": true,
+      "retention_days": 90
+    }
+  ]
+}
